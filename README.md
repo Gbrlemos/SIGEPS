@@ -5,9 +5,13 @@ O SIGEPS é um sistema web desenvolvido como projeto do curso de Desenvolvimento
 **📁 Estrutura do Projeto**
 O projeto está organizado em duas pastas principais dentro da pasta SIGEPS:
 
+
 **BACK**: Contém todo o código referente ao backend da aplicação.
+
 **FRONT**: Contém o código do frontend da aplicação.
+
 **🚀 Funcionalidades**
+
 Cadastro de Sistemas:
 
 Permite cadastrar sistemas para acompanhamento.
