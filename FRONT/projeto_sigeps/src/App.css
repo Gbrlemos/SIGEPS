@@ -1,0 +1,593 @@
+/* src/styles/app.css */
+
+/* Definindo variáveis de estilo */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  flex: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Estilo para âncoras */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Estilização do corpo */
+body {
+  background-image: url('../images/SigepsBackground.png');
+  background-size: cover; /* Para cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed;
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+html, body {
+  padding-top: 50px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body::after {
+  content: ''; /* Cria um pseudo-elemento */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));  background-size: cover; /* Para cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  z-index: -1; /* Garante que o overlay fique sobre a imagem */
+}
+
+
+/* Estilo para cabeçalho */
+h1, h2, h3, h4 {
+  font-size: 2.2em;
+  line-height: 1.1;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+/* Estilo base para o app */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.app-body {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex: 1;
+  padding-bottom: 40px;
+
+}
+
+/* Para o App.jsx */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0; /* Remove o padding que causava espaçamento indesejado */
+  flex-grow: 1;
+}
+
+
+/* Para os componentes individuais */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 2px 2px 20px rgba(20, 1, 2, 0.5);
+  z-index: 3;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 40px;
+  flex-grow: 1;
+  margin-top: 5px;
+}
+
+/* Para os componentes detalhados no plano detalhe */
+.plano-detalhes{
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.info-box {
+  color: rgba(255, 255, 255, 0.5); /* Texto escuro para boa legibilidade */
+  border: 1px solid rgba(255, 255, 255, 0); /* Borda suave */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding-left: 10px; /* Espaçamento interno */
+  padding-right: 10px;
+  align-items: center;
+  font-size: 12px; /* Texto pequeno */
+  line-height: 1.5; /* Melhor legibilidade */
+  margin-bottom: 3px;
+}
+
+
+/* Estilo para formulários */
+form {
+  display: flex;
+  background-color: #242424;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(20, 1, 2, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Estilo para rótulos de input */
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Estilo para inputs */
+input[type="text"],
+input[type="password"],
+select {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transition: border 0.3s;
+}
+
+section {
+  width: 80%; /* 80% da largura da página */
+  height: 80vh; /* 80% da altura da página, usando unidade vh (viewport height) */
+  margin: 0 auto; /* Centraliza a seção horizontalmente */
+  padding: 20px; /* Espaçamento interno para o conteúdo da seção */
+  background-color: #f4f4f4; /* Cor de fundo, pode ser ajustada */
+  border-radius: 8px; /* Bordas arredondadas, pode ser ajustado */
+  box-sizing: border-box; /* Garante que o padding não afete a largura total */
+  overflow: auto; /* Garante que o conteúdo não ultrapasse a área da seção, com rolagem se necessário */
+  color: #1a1a1a;
+}
+
+
+/* Estilização adicional para o conteúdo dentro da seção */
+section p {
+  font-size: 16px; /* Ajuste do tamanho da fonte do texto */
+  color: #1a1a1a; /* Cor do texto */
+}
+
+section h2 {
+  color: #1a1a1a;
+}
+
+
+/* Efeito ao focar nos campos de entrada */
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border: 1px solid #646cff;
+  outline: none;
+}
+
+/* Estilo para botões */
+button {
+  background-color: #ffffff;
+  color: #2c2c2c;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.25s, background-color 0.3s;
+}
+
+button:hover {
+  border-color: #646cff;
+  background-color: #2c2c2c;
+}
+
+/* Estilo para textarea */
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* Estilo para a lista de chamados */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff;
+  color: #000;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a tabela */
+table {
+  color: #000;
+  width: 90%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #ffffff;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+tr:hover {
+  background-color: #444;
+}
+
+/* Navbar fixo no topo */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 20px;  /* Ajuste o tamanho para o desejado */
+  font-weight: bold; /* Deixa o nome mais destacado */
+  line-height: 1; /* Garante que a altura da linha não aumente o navbar */
+  margin: 0; /* Remove margens adicionais */
+  padding-bottom: 5px; 
+}
+
+.navbar-icon {
+  width: 30px;  /* Ajuste o tamanho do ícone conforme necessário */
+  height: auto;
+  margin-right: 0px;  /* Espaço entre o ícone e o texto */
+}
+
+
+/* Itens da navbar organizados */
+.navbar-list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-list li {
+  margin: 0 15px;
+}
+
+.navbar-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Ajuste do container principal */
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 2px 2px 20px rgba(20, 1, 2, 0.5);
+  background-color: #1a1a1a;
+  z-index: 5;
+}
+
+/* Ajuste do layout das divs internas */
+.sidetoside {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  height: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+  min-width: 280px;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-sizing: border-box; /* Garante que padding não expanda a div */
+
+  
+}
+
+/* Estilizando a barra de rolagem (funciona em WebKit: Chrome, Safari) */
+.sidetoside::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.sidetoside::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor do "fundo" da barra */
+}
+
+.sidetoside::-webkit-scrollbar-thumb {
+  background-color: #888; /* Cor da barra de rolagem */
+  border-radius: 10px; /* Arredondamento */
+  border: 2px solid #f1f1f1; /* Borda ao redor da barra */
+}
+
+.sidetoside::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cor ao passar o mouse */
+}
+
+/* Ajustes nos inputs para respeitar os limites das divs */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #444;
+  color: #f1f1f1;
+  border: 1px solid #555;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Botão */
+button {
+  background-color: #646cff;
+  color: rgb(255, 255, 255);
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Garante que o botão ocupe toda a largura */
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+/* Responsividade para garantir que as divs se ajustem em telas menores */
+@media (max-width: 800px) {
+  .sidetoside {
+    max-width: 100%;
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Estilo do Navbar */
+.navbar {
+  display: flex;
+  font-weight: 700;  /* Deixa a fonte mais espessa */
+  gap: 8px; /* Espaçamento entre o ícone e o texto */
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif; /* Altera para uma fonte moderna */
+  justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  background-color: #1a1a1a; /* Cor de fundo */
+  padding: 10px 20px; /* Espaçamento interno */
+  color: white; /* Cor do texto */
+  font-size: 24px; /* Tamanho do texto */
+  z-index: 11; /* Garante que o Navbar fique acima de outros elementos */
+  position: fixed; /* Para que o z-index funcione */
+  top: 0;
+  left: 0;
+}
+
+/* Estilo para o nome "Sigeps" */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-right: 2px;
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  border-radius: 8px; /* Suaviza os cantos, ajuste para o formato desejado */
+  color: #007bff; /* Texto em branco para contraste */
+  font-family: 'Montserrat', sans-serif; /* Fonte moderna */
+  font-size: 24px; /* Tamanho do texto */
+  font-weight: bold; /* Deixa o nome mais destacado */
+  cursor: pointer; /* Mostra o cursor como uma mãozinha */
+}
+
+.navbar-logo img {
+  width: 24px; /* Ajuste o tamanho do ícone */
+  height: 24px;
+  background-color: white;
+}
+
+/* Estilo para os botões de Login e Cadastrar */
+.navbar .auth-buttons {
+  font-size: 15px;
+  display: flex;
+  gap: 5px; /* Espaçamento entre os botões */
+  padding-right: 40px;
+}
+
+.navbar .auth-buttons a {
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  padding: 8px 5px; /* Espaçamento interno */
+  border: 1px solid transparent; /* Sem borda inicialmente */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito de hover nos botões */
+.navbar .auth-buttons a:hover {
+  background-color: #444; /* Cor de fundo ao passar o mouse */
+  color: #ddd; /* Cor do texto ao passar o mouse */
+}
+
+/* Sidebar estará sempre à esquerda */
+/* Sidebar */
+.sidebar {
+  width: 60px; /* Inicialmente com largura pequena */
+  position: fixed; /* Fixo à esquerda */
+  margin-top: 30px;
+  left: 0;
+  background-color: #1a1a1a; /* Cor de fundo */
+  padding-top: 20px;
+  padding-bottom: 20px; /* Espaço embaixo também */
+  display: flex;
+  border-radius: 0 8px 8px 0; /* Borda arredondada à direita */
+  flex-direction: column; /* Empilha os itens verticalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  transition: width 0.3s ease-in-out; /* Suaviza a animação de expansão */
+  z-index: 10; /* Para garantir que o menu fique acima do conteúdo */
+}
+
+/* Estilo para os links dentro da sidebar (antes eram botões) */
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%; /* O link ocupa toda a largura da sidebar */
+  height: 50px; /* Altura dos links */
+  text-decoration: none; /* Remove o sublinhado do link */
+  background: none;
+  color: white;
+  font-size: 20px; /* Tamanho do ícone */
+  cursor: pointer;
+  transition: background-color 0.3s, width 0.3s; /* Transição suave */
+  text-align: center;
+}
+
+/* Estilo ao passar o mouse (hover) */
+.sidebar-btn:hover {
+  background-color: #444; /* Cor ao passar o mouse */
+  width: 200px; /* Expandir ao passar o mouse */
+}
+
+/* Mostrar o texto ao lado ao passar o mouse */
+.sidebar-btn span {
+  display: none; /* Inicialmente o nome não aparece */
+  margin-left: 10px; /* Espaço entre o ícone e o nome */
+}
+
+.sidebar-btn:hover span {
+  display: inline-block; /* Exibe o nome ao passar o mouse */
+  font-size: 16px; /* Tamanho do texto */
+}
+
+
+/* Adicionando uma margem ao conteúdo principal para que ele não fique sob a sidebar */
+.content {
+  margin-left: 60px; /* Ajuste inicial da margem para acomodar a sidebar */
+  transition: margin-left 0.3s;
+}
+
+.sidebar .sidebar-btn i {
+  font-size: 24px; /* Ajustando o tamanho dos ícones */
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 5px;
+  margin-top: auto; /* Garante que o footer fique no fundo */
+  position: relative;
+  bottom: 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #ccc; /* Cor do link */
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #fff; /* Cor ao passar o mouse */
+  text-decoration: underline;
+}
+
